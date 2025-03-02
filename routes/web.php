@@ -27,6 +27,7 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware('auth')->group(function() {
     Route::get('/adicionar-novo', [AddObraController::class, 'index'])->name('adicionar.index');
+    Route::post('/adicionar-novo', [AddObraController::class, 'store'])->name('adicionar.store');
 });
 
 

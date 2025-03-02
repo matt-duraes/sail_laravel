@@ -1,0 +1,23 @@
+.form-label {
+    @apply flex flex-col mb-4;
+}
+
+.form-input {
+    @apply rounded-lg w-64;
+}
+
+.form-container {
+    @apply flex flex-col p-5;
+}
+
+.button-submit {
+    @apply cursor-pointer mt-4 rounded-lg text-white font-bold w-28 bg-green-600 p-2 hover:bg-green-700;
+}
+
+.page-container {
+    @apply max-w-[1280px] mx-auto w-full mt-5 bg-slate-800;
+}
+
+.texto-label {
+    @apply text-white font-bold;
+}
