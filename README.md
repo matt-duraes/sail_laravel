@@ -1,4 +1,4 @@
-## Projeto de gestão de mangás para acompanhamento de maneira mais eficiante 
+## Projeto de gestão de mangás para acompanhamento de maneira mais eficiente 
 
 ## Tecnologias utilizadas
 - Typescript

@@ -172,7 +172,6 @@ export default function Authenticated({
                         <div className="max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
                             {header}
                         </div>
-                        <ButtonAddAnime title="Adicionar Anime" />
                     </div>
                 </header>
 
