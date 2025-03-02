@@ -1,3 +1,15 @@
-# Projeto feito com intuito de auxiliar usuários que leem mangás em diversos sites 
+## Projeto de gestão de mangás para acompanhamento de maneira mais eficiante 
 
-# Tecnologias utilizadas: Laravel, Inertia e React
+## Tecnologias utilizadas
+- Typescript
+- React
+- Mysql
+- Php
+- Laravel
+- Inertia
+
+## Funções 
+- A definir ✅
+
+
+
