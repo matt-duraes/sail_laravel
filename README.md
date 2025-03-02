@@ -1,5 +1,3 @@
-## TECNOLOGIAS UTILIZADAS
+# Projeto feito com intuito de auxiliar usuários que leem mangás em diversos sites 
 
-# Laravel
-# InertiaJs
-# React/Typescript
+# Tecnologias utilizadas: Laravel, Inertia e React
