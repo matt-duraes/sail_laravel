@@ -13,16 +13,16 @@ interface Obra {
 export default function Dashboard() {
     const {props} = usePage<{obras: Obra[], auth: { user: User }}>();
     const {obras = []} = props;
-
+    const nome = props.auth.user.name;
     console.log(obras)
     return (
         <AuthenticatedLayout>
-            <Head title="Dashboard" />
+            <Head title="Biblioteca" />
             <div className="py-12">
-                <div className="flex w-[100%] dark:bg-gray-800 justify-between items-center mx-auto max-w-7xl sm:px-6 lg:px-8">
+                <div className="flex w-[100%] dark:bg-gray-800 justify-between items-center mx-auto max-w-7xl">
                     <div className="overflow-hidden">
                         <div className="p-6 text-gray-900 dark:text-gray-100">
-                            Você está logado, Bem-vindo!
+                            Bem-vindo, {nome}!
                         </div>
                     </div>
                     <ButtonAddAnime titulo="Adicionar Anime" caminho='adicionar.index'/>
