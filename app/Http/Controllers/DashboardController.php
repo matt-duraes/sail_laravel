@@ -19,7 +19,7 @@ class DashboardController extends Controller
 
         $animes = Obra::where('user_id', $user)
                         ->orderBy('created_at', 'desc')
-                        ->paginate(5);
+                        ->paginate(10);
         $animeArray = $animes->toArray();
         return Inertia::render('Dashboard', [
             'obras' => $animeArray['data']

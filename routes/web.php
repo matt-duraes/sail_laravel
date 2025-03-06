@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\AddObraController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ObraController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -28,9 +28,11 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware('auth')->group(function() {
-    Route::get('/adicionar-novo', [AddObraController::class, 'index'])->name('adicionar.index');
-    Route::post('/adicionar-novo', [AddObraController::class, 'store'])->name('adicionar.store');
+    Route::get('/adicionar-novo', [ObraController::class, 'index'])->name('adicionar.index');
+    Route::post('/adicionar-novo', [ObraController::class, 'store'])->name('adicionar.store');
+    Route::get('/obra/{idObra}', [ObraController::class, 'details'])->name('obra.details');
+    Route::get('/obra/{idObra}/editar', [ObraController::class, 'edit'])->name('obra.edit');
+    Route::patch('/obra/{idObra}', [ObraController::class, 'update'])->name('obra.update');
 });
-
 
 require __DIR__.'/auth.php';

@@ -1,7 +1,7 @@
 import ButtonAddAnime from '@/Components/ButtonAddAnime';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { User } from '@/types';
-import { Head, usePage } from '@inertiajs/react';
+import { Head, usePage, router } from '@inertiajs/react';
 
 interface Obra {
     id: number;
@@ -15,20 +15,9 @@ export default function Dashboard() {
     const { obras } = props;
     const nome = props.auth.user.name;
 
-    const fontes = [
-        { dominio: 'slimeread.com', regex: /cap-id\d+/ },
-        { dominio: 'mangaonline.biz', regex: /capitulo-\d+/ },
-        { dominio: 'seitacelestial.com', regex: /chapter-\d+/ }
-    ];
 
-    function montarUrlCapitulo(urlBase: string, capituloParado: string | number) {
-        const capituloFormatado = capituloParado.toString().padStart(2, '0'); // Garantir que o capítulo tenha dois dígitos
-        for (const fonte of fontes) {
-            if (urlBase.includes(fonte.dominio)) {
-                return urlBase.replace(fonte.regex, fonte.regex.source.split('-')[0] + '-' + capituloFormatado);
-            }
-        }
-        return urlBase; // Retornar a URL original se não encontrar um domínio correspondente
+    function acessarObra(idObra: number) {
+        router.get(route('obra.details', { idObra }));
     }
 
     return (
@@ -49,7 +38,11 @@ export default function Dashboard() {
                         <ul className="mt-4 w-[100%]">
                             {Array.isArray(obras) && obras.length > 0 ? (
                                 obras.map((obra) => (
-                                    <li key={obra.id} className="mt-4 mb-4 w-[100%] flex flex-col bg-gray-700 p-4 gap-1 rounded-md">
+                                    <li 
+                                        key={obra.id} 
+                                        className="mt-4 mb-4 w-[100%] flex flex-col bg-gray-700 p-4 gap-1 rounded-md cursor-pointer hover:bg-gray-600"
+                                        onClick={() => acessarObra(obra.id)}
+                                    >
                                         <div className="text-gray-900 dark:text-gray-100 flex">
                                             <strong className='mr-2'>Nome:</strong> {obra.nome}
                                         </div>
@@ -59,13 +52,6 @@ export default function Dashboard() {
                                         <div className="text-gray-900 dark:text-gray-100 flex">
                                             <strong className='mr-2'>Capítulo Parado:</strong> {obra.capitulo_parado}
                                         </div>
-                                        <a
-                                            href={montarUrlCapitulo(obra.site_origem, obra.capitulo_parado) || '#'}
-                                            target='_blank'
-                                            className='p-4 mt-4 pt-2 pb-2 rounded bg-green-500 hover:bg-green-700 text-white font-bold w-40'
-                                        >
-                                            Continuar Leitura
-                                        </a>
                                     </li>
                                 ))
                             ) : (
