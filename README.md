@@ -4,11 +4,11 @@ Quem nunca perdeu a origem ou capítulo que parou de determinado mangá, não é
 Pensando nisso, irei desenvolver uma aplicação que visa facilitar a gestão de fontes e obras permitindo que o próprio usuário altere de
 maneira simples.
 
-- [] Criar usuário (CRUD completo)
-- [] Sistema de login
-- [] Adicionar um mangá na biblioteca (nome, site fonte, capítulo que parou)
+- [x] Criar usuário (CRUD completo)
+- [x] Sistema de login
+- [x] Adicionar um mangá na biblioteca (nome, site fonte, capítulo que parou)
 - [] Marcar e desmarcar um mangá como concluído e assim passar ele para outra aba
-- [] Listar todos os mangás
+- [x] Listar todos os mangás
 - [] Buscar atualização de capítulos na fonte inserida
 
 Abaixo estão os principais conceitos que serão utilizados durante o desenvolvimento :
