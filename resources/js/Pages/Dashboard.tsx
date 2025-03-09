@@ -10,15 +10,25 @@ interface Obra {
     site_origem: string;
     capitulo_parado: string;
 }
+interface Paginacao {
+    pagina_atual : number|string;
+    total_paginas : number|string;
+    por_pagina : number|string;
+    total : number|string;
+}
 
 export default function Dashboard() {
-    const { props } = usePage<{ obras: Obra[], auth: { user: User } }>();
-    const { obras } = props;
+    const { props } = usePage<{ obras: Obra[], paginacao: Paginacao, auth: { user: User } }>();
+    const { obras, paginacao } = props;
     const nome = props.auth.user.name;
 
 
     function acessarObra(idObra: number) {
         router.get(route('obra.details', { idObra }));
+    }
+
+    function alterarPagina(page: number) {
+        router.get(route('dashboard', { page }));
     }
 
     return (
@@ -58,6 +68,25 @@ export default function Dashboard() {
                                 </li>
                             )}
                         </ul>
+                        {Number(paginacao.total_paginas) > 1 && (
+                            <div className="mt-4">
+                                <nav className="pagination">
+                                    <ul className="flex justify-center">
+                                        {Array.from({ length: Number(paginacao.total_paginas) }, (_, index) => (
+                                            <li key={index} className={`mx-1 ${paginacao.pagina_atual === index + 1 ? 'font-bold' : ''}`}>
+                                                <button
+                                                    onClick={() => alterarPagina(index + 1)}
+                                                    className={`px-4 py-2 border rounded ${paginacao.pagina_atual === index + 1 ? 'bg-blue-500 text-white' : 'bg-white text-blue-500'}`}
+                                                >
+                                                    {index + 1}
+                                                </button>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </nav>
+                            </div>       
+                        )}
+                        
                     </div>
                 </div>
             </div>
