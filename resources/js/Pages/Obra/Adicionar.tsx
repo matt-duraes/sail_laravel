@@ -53,19 +53,19 @@ const Adicionar: React.FC<AdicionarProps> = () => {
     return (
         <AuthenticatedLayout>
             <div className="py-12">
-                <div className="flex w-[100%] dark:bg-gray-800 justify-between items-center mx-auto max-w-7xl sm:px-6 lg:px-8">
-                    <div className="overflow-hidden">
-                        <div className="p-6 text-gray-900 dark:text-gray-100">
-                            Adicione suas obras favoritas e acompanhe o seu progresso!
-                        </div>
+                <div className="flex w-[100%] dark:bg-gray-800 justify-between items-center mx-auto max-w-7xl 
+                    p-4
+                ">
+                    <div className="px-2 text-gray-900 dark:text-gray-100">
+                        Adicione suas obras favoritas e acompanhe o seu progresso!
                     </div>
-                    <ButtonAddAnime titulo="Voltar" caminho="dashboard" />
+                    <ButtonAddAnime  titulo="Voltar" caminho="dashboard" />
                 </div>
 
                 <div className='page-container'>
                     <form onSubmit={handleSubmit} className='form-container'>
                         <FormInput
-                            label="Nome do anime"
+                            label="Nome da Obra"
                             name="nome"
                             value={data.nome}
                             onChange={handleChange}

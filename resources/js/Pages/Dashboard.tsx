@@ -35,7 +35,7 @@ export default function Dashboard() {
                 </div>
                 <div className="mt-4 bg-white dark:bg-gray-800 overflow-hidden w-[100%] max-w-7xl mx-auto">
                     <div className="p-6">
-                        <h2 className="text-lg font-medium text-gray-900 dark:text-gray-100">Lista de Obras</h2>
+                        <h2 className="text-lg font-medium text-gray-900 dark:text-gray-100">Minhas Obras</h2>
                         <ul className="mt-4 w-[100%]">
                             {Array.isArray(obras) && obras.length > 0 ? (
                                 obras.map((obra) => (

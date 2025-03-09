@@ -1,6 +1,7 @@
 import React from 'react';
 
 interface FormInputProps {
+    id?: string|undefined;
     label: string;
     name: string;
     value: string;
@@ -8,10 +9,11 @@ interface FormInputProps {
     error?: string;
 }
 
-const FormInput: React.FC<FormInputProps> = ({ label, name, value, onChange, error }) => (
+const FormInput: React.FC<FormInputProps> = ({ id, label, name, value, onChange, error }) => (
     <label htmlFor={name} className='form-label'>
         <p className='texto-label'>{label}</p>
         <input
+            id={id}
             name={name}
             value={value}
             onChange={onChange}

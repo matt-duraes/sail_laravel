@@ -3,7 +3,7 @@
 }
 
 .form-input {
-    @apply rounded-lg w-64;
+    @apply rounded-md w-64;
 }
 
 .form-container {
@@ -11,7 +11,7 @@
 }
 
 .button-submit {
-    @apply cursor-pointer mt-4 rounded-lg text-white font-bold w-28 bg-green-600 p-2 hover:bg-green-700;
+    @apply cursor-pointer mt-4 rounded-md text-white w-28 bg-green-600 p-2 hover:bg-green-700;
 }
 
 .page-container {

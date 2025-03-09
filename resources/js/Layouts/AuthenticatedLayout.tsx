@@ -32,7 +32,7 @@ export default function Authenticated({
                                     href={route('dashboard')}
                                     active={route().current('dashboard')}
                                 >
-                                    Dashboard
+                                    Biblioteca
                                 </NavLink>
                             </div>
                         </div>
