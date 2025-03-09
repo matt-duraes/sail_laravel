@@ -33,7 +33,7 @@ const Adicionar: React.FC<AdicionarProps> = () => {
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        post(route('adicionar.store'), {
+        post(route('adicionar.obra'), {
             preserveScroll: true,
             onSuccess: () => {
                 // Resetar o formulário após o sucesso
@@ -59,7 +59,7 @@ const Adicionar: React.FC<AdicionarProps> = () => {
                     <div className="px-2 text-gray-900 dark:text-gray-100">
                         Adicione suas obras favoritas e acompanhe o seu progresso!
                     </div>
-                    <ButtonAddAnime  titulo="Voltar" caminho="dashboard" />
+                    <ButtonAddAnime  titulo="Voltar" caminho="biblioteca" />
                 </div>
 
                 <div className='page-container'>

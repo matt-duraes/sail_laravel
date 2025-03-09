@@ -24,11 +24,11 @@ export default function Dashboard() {
 
 
     function acessarObra(idObra: number) {
-        router.get(route('obra.details', { idObra }));
+        router.get(route('detalhe.obra', { idObra }));
     }
 
     function alterarPagina(page: number) {
-        router.get(route('dashboard', { page }));
+        router.get(route('biblioteca', { page }));
     }
 
     return (
@@ -41,7 +41,7 @@ export default function Dashboard() {
                             Bem-vindo, {nome}!
                         </div>
                     </div>
-                    <ButtonAddAnime titulo="Adicionar Anime" caminho='adicionar.index' />
+                    <ButtonAddAnime titulo="Adicionar Anime" caminho='adicionar.obra.index' />
                 </div>
                 <div className="mt-4 bg-white dark:bg-gray-800 overflow-hidden w-[100%] max-w-7xl mx-auto">
                     <div className="p-6">

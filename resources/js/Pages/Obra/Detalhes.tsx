@@ -50,11 +50,11 @@ export default function Detalhes() {
     }
     
     function editarObra(idObra: number) {
-        return route('obra.edit', { idObra });
+        return route('editar.obra.index', { idObra });
     }
 
     function deletarObra(idObra: number) {
-        router.delete(route('obra.destroy', { idObra }), {
+        router.delete(route('obra.deletar', { idObra }), {
             onSuccess: () => {
                 console.log('Obra deletada com sucesso');
             },

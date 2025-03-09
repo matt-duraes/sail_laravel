@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 
 use Inertia\Inertia;
 
-class DashboardController extends Controller 
+class BibliotecaController extends Controller 
 {
     
 

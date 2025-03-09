@@ -23,7 +23,7 @@ export default function Editar() {
 
     function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
-        patch(route('obra.update', { idObra: obra.id }));
+        patch(route('obra.editar', { idObra: obra.id }));
     }
 
     return (
@@ -35,7 +35,7 @@ export default function Editar() {
                     <div className="px-2 text-gray-900 dark:text-gray-100">
                         Editar Obra
                     </div>
-                    <ButtonAddAnime  titulo="Voltar" caminho="dashboard" />
+                    <ButtonAddAnime  titulo="Voltar" caminho="biblioteca" />
                 </div>
 
                 <div className='page-container'>

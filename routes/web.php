@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\BibliotecaController;
 use App\Http\Controllers\ObraController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
@@ -17,7 +17,7 @@ Route::get('/', function () {
 });
 
 Route::middleware('auth')->group(function () {
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/biblioteca', [BibliotecaController::class, 'index'])->name('biblioteca');
 });
 
 
@@ -28,12 +28,12 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware('auth')->group(function() {
-    Route::get('/adicionar-novo', [ObraController::class, 'index'])->name('adicionar.index');
-    Route::post('/adicionar-novo', [ObraController::class, 'store'])->name('adicionar.store');
-    Route::get('/obra/{idObra}', [ObraController::class, 'details'])->name('obra.details');
-    Route::get('/obra/{idObra}/editar', [ObraController::class, 'edit'])->name('obra.edit');
-    Route::delete('/obra/{idObra}', [ObraController::class, 'destroy'])->name('obra.destroy');
-    Route::patch('/obra/{idObra}', [ObraController::class, 'update'])->name('obra.update');
+    Route::get('/adicionar-obra-index', [ObraController::class, 'adicionarObraIndex'])->name('adicionar.obra.index');
+    Route::post('/adicionar-obra', [ObraController::class, 'adicionarObra'])->name('adicionar.obra');
+    Route::get('/detalhe-obra/{idObra}', [ObraController::class, 'detalheObra'])->name('detalhe.obra');
+    Route::get('/editar-obra-index/{idObra}', [ObraController::class, 'editarObraIndex'])->name('editar.obra.index');
+    Route::patch('/editar-obra/{idObra}', [ObraController::class, 'editarObra'])->name('obra.editar');
+    Route::delete('/deletar-obra/{idObra}', [ObraController::class, 'deletarObra'])->name('obra.deletar');
 });
 
 require __DIR__.'/auth.php';
