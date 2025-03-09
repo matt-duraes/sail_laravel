@@ -2,6 +2,7 @@ import ButtonAddAnime from '@/Components/ButtonAddAnime';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { User } from '@/types';
 import { Head, usePage, router } from '@inertiajs/react';
+import { useEffect } from 'react';
 
 interface Obra {
     id: number;
@@ -45,9 +46,6 @@ export default function Dashboard() {
                                     >
                                         <div className="text-gray-900 dark:text-gray-100 flex">
                                             <strong className='mr-2'>Nome:</strong> {obra.nome}
-                                        </div>
-                                        <div className="text-gray-900 dark:text-gray-100 flex">
-                                            <strong className='mr-2'>Site de Origem:</strong> {obra.site_origem}
                                         </div>
                                         <div className="text-gray-900 dark:text-gray-100 flex">
                                             <strong className='mr-2'>Capítulo Parado:</strong> {obra.capitulo_parado}

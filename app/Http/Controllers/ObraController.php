@@ -49,6 +49,13 @@ class ObraController extends Controller
         ]);
     }
 
+    public function destroy($idObra)
+    {
+        $obra = Obra::findOrFail($idObra);
+        $obra->delete();
+
+        return Redirect::route('dashboard')->with('success', 'Obra deletada com sucesso!');
+    }
     public function update(Request $request, $idObra)
     {
         $validated = $request->validate([

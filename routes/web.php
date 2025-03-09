@@ -32,6 +32,7 @@ Route::middleware('auth')->group(function() {
     Route::post('/adicionar-novo', [ObraController::class, 'store'])->name('adicionar.store');
     Route::get('/obra/{idObra}', [ObraController::class, 'details'])->name('obra.details');
     Route::get('/obra/{idObra}/editar', [ObraController::class, 'edit'])->name('obra.edit');
+    Route::delete('/obra/{idObra}', [ObraController::class, 'destroy'])->name('obra.destroy');
     Route::patch('/obra/{idObra}', [ObraController::class, 'update'])->name('obra.update');
 });
 
